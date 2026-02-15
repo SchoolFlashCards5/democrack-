@@ -1,4 +1,5 @@
 # democrack!
+ver 0.9
 
 # BIG OLD WARNING:
 # THIS IS AN EDUCATION RESOURCE
