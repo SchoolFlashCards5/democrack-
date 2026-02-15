@@ -44,6 +44,7 @@ try:
         for line in commons:
             guess = line.strip()
             if guess == actual_password:
+                amtnotit += 1
                 print(f"Got it from commons! Password is: {guess}")
                 print(f"Took {amtnotit} tries!")
                 sys.exit(0)
@@ -61,7 +62,8 @@ except FileNotFoundError:
 # -----------------------------
 # 2. Brute-force
 # -----------------------------
-print("\nStarting brute forcing...\n")
+print("Wasn't in common passes we had...")
+print("Starting brute forcing...")
 found = False
 
 # Local variable speed boost
@@ -74,6 +76,7 @@ for length in range(MIN_LENGTH, MAX_LENGTH + 1):
 
         # Direct tuple comparison (no string creation here) (used to use string, nolonger does for speed)
         if guess == actual:
+            amtnotit += 1
             print(f"Got it! Password is: {''.join(guess)}")
             print(f"Took {amtnotit} tries!")
             found = True
@@ -91,3 +94,6 @@ for length in range(MIN_LENGTH, MAX_LENGTH + 1):
 if not found:
     print("\nPassword was not found in the brute-force search space.")
     print("Maybe it's too long, contains numbers, symbols, or uses unsupported characters.")
+# Reminder:
+# You can remove amtnotit and the progress check entirely for slightly better speed,
+# but you won't see progress updates.
