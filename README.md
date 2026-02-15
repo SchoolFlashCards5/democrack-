@@ -34,5 +34,7 @@ Also, in the config area, you can change from ascii_letters to ascii_lowercase o
 Me on the code (This is my project, im Nny, but this IS a shared account)
 
 BUT huge crerdits to Daniel Miessler 🛡️ for the passwords list 
+
 His page is https://github.com/danielmiessler 
+
 List was at https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/10k-most-common.txt
