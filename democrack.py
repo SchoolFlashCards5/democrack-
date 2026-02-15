@@ -59,11 +59,16 @@ print("Starting brute forcing...")
 
 found = False
 
+# Local variable speed boost
+chars = CHARACTERS
+product = itertools.product
+actual = actual_tuple
+
 for length in range(MIN_LENGTH, MAX_LENGTH + 1):
-    for guess in itertools.product(CHARACTERS, repeat=length):
+    for guess in product(chars, repeat=length):
 
         # Direct tuple comparison (no string creation)
-        if guess == actual_tuple:
+        if guess == actual:
             amtnotit += 1
             print(f"Got it! Password is: {''.join(guess)}")
             print(f"Took {amtnotit} tries!")
@@ -85,3 +90,4 @@ if not found:
 # Reminder:
 # You can remove amtnotit and the progress check entirely for slightly better speed,
 # but you won't see progress updates.
+    
