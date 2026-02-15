@@ -2,6 +2,10 @@
 # THIS IS FOR EDUCATIONAL PURPOSES ONLY
 # I AM NOT RESPONSIBLE FOR HOW YOU USE THIS
 
+# ver 1.0
+# normal file
+# im warning you, dont delete random shit
+
 import itertools
 import sys
 import string
@@ -91,3 +95,4 @@ if not found:
 # You can remove amtnotit and the progress check entirely for slightly better speed,
 # but you won't see progress updates.
     
+
