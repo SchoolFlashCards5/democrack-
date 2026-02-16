@@ -1,8 +1,9 @@
 # WARNING
 # THIS IS FOR EDUCATIONAL PURPOSES ONLY
 # I AM NOT RESPONSIBLE FOR HOW YOU USE THIS
-
-# ver 1.1!
+# ver 1.1
+# faster file
+# im warning you, dont delete random shit
 
 import itertools
 import sys
