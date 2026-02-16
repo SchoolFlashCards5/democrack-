@@ -7,11 +7,18 @@ ver 1.0
 # BIG OLD WARNING:
 # THIS IS AN EDUCATION RESOURCE
 # DO NOT USE IN REAL LIFE ON REAL PASSWORDS!
+# I CANNOT STRESS THIS ENOUGH!
 
 ### Only works with ascii letters (no symbols, no numbers, no punctuation. just letters)
 
 
 democrack! is a democracker in pure python.
+
+## Something to note
+
+Once again, this is an eeducational resource, and do not use this on real accounts on real people.
+
+Now that that's out of the way, democrack-withcomments.py and democrack-mildlyfaster.py are NOT needed, they are simply other versions (comments lets you get more of an idea of how it works, mildly faster removes the amtnotit variable and anything to do with it for a mild speed boost.
 
 
 ## Why?
