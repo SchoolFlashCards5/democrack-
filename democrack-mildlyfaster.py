@@ -1,15 +1,24 @@
 # WARNING
 # THIS IS FOR EDUCATIONAL PURPOSES ONLY
 # I AM NOT RESPONSIBLE FOR HOW YOU USE THIS
-# ver 1.1
-# faster file
+# ver 1.2
+# added password input option
 # im warning you, dont delete random shit
 
 import itertools
 import sys
 import string
 
-print("Starting by trying common passes...")
+# -----------------------------
+# ASCII BANNER
+# -----------------------------
+print(r"""
+     _                                          _    _ 
+  __| | ___ _ __ ___   ___   ___ _ __ __ _  ___| | _| |
+ / _` |/ _ \ '_ ` _ \ / _ \ / __| '__/ _` |/ __| |/ / |
+| (_| |  __/ | | | | | (_) | (__| | | (_| | (__|   <|_|
+ \__,_|\___|_| |_| |_|\___/ \___|_|  \__,_|\___|_|\_(_)
+""")
 
 # -----------------------------
 # CONFIG
@@ -19,19 +28,34 @@ MIN_LENGTH = 1
 MAX_LENGTH = 10
 PROGRESS_INTERVAL = 10_000_000
 
-# removed everything about var amtnotit for speed
+# -----------------------------
+# 0. Choose password source
+# -----------------------------
+print("Choose password source:")
+print("1 - Use pass.txt")
+print("2 - Type password manually")
 
-# -----------------------------
-# 0. Read actual password
-# -----------------------------
-try:
-    with open('pass.txt', 'r') as file:
-        actual_password = file.readline().strip()
-        actual_tuple = tuple(actual_password)  # Convert once for fast comparison
-except FileNotFoundError:
-    print("Error: pass.txt not found. Cannot continue.")
-    print("(Maybe you dont have it loaded, or you are on an online compiler that doesnt let you import it)")
+choice = input("Enter 1 or 2: ").strip()
+
+if choice == "1":
+    try:
+        with open('pass.txt', 'r') as file:
+            actual_password = file.readline().strip()
+            actual_tuple = tuple(actual_password)
+    except FileNotFoundError:
+        print("ERROR: You chose pass.txt but it DOES NOT EXIST.")
+        print("Load the file or choose option 2 next time.")
+        sys.exit(1)
+
+elif choice == "2":
+    actual_password = input("Type the password to brute-force: ").strip()
+    actual_tuple = tuple(actual_password)
+
+else:
+    print("Invalid choice. Exiting.")
     sys.exit(1)
+
+print("Starting by trying common passes...")
 
 # -----------------------------
 # 1. Check common passwords first
@@ -42,7 +66,7 @@ try:
             guess = line.strip()
             if guess == actual_password:
                 print(f"Got it from commons! Password is: {guess}")
-                print(f"Took less than 10k (we know because of commons length) tries!")
+                print("Took less than 10k tries! (based on commons size)")
                 sys.exit(0)
 
 except FileNotFoundError:
@@ -67,7 +91,7 @@ for length in range(MIN_LENGTH, MAX_LENGTH + 1):
         # Direct tuple comparison (no string creation)
         if guess == actual:
             print(f"Got it! Password is: {''.join(guess)}")
-            print(f"Took probably a few tries! (we dont have amount tried var here)")
+            print("Took probably a few tries! (we dont track amount here)")
             found = True
             break
 
