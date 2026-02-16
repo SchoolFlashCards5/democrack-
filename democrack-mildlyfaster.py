@@ -67,7 +67,7 @@ for length in range(MIN_LENGTH, MAX_LENGTH + 1):
         # Direct tuple comparison (no string creation)
         if guess == actual:
             print(f"Got it! Password is: {''.join(guess)}")
-            print(f"Took probably a few tries (we dont have amoutn tried var here) tries!")
+            print(f"Took probably a few tries! (we dont have amount tried var here)")
             found = True
             break
 
