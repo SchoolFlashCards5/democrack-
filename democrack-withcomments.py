@@ -2,7 +2,7 @@
 # THIS IS FOR EDUCATIONAL PURPOSES ONLY
 # I AM NOT RESPONSIBLE FOR HOW YOU USE THIS
 
-# ver 1.0
+# ver 1.1!
 # commented file
 # im warning you, dont delete random shit
 
@@ -101,4 +101,3 @@ if not found:
 # Reminder:
 # You can remove amtnotit and the progress check entirely for slightly better speed,
 # but you won't see progress updates.
-
