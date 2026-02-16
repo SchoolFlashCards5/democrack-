@@ -1,7 +1,6 @@
 # WARNING
 # THIS IS FOR EDUCATIONAL PURPOSES ONLY
 # I AM NOT RESPONSIBLE FOR HOW YOU USE THIS
-
 # ver 1.1
 # normal file
 # im warning you, dont delete random shit
@@ -90,10 +89,8 @@ for length in range(MIN_LENGTH, MAX_LENGTH + 1):
 if not found:
     print("\nPassword was not found in the brute-force search space.")
     print("Maybe it's too long, contains numbers, symbols, or uses unsupported characters.")
+    print("Perhaps read the instructions next time?")
 
 # Reminder:
 # You can remove amtnotit and the progress check entirely for slightly better speed,
 # but you won't see progress updates.
-    
-
-
