@@ -18,7 +18,7 @@ democrack! is a democracker in pure python.
 
 Once again, this is an eeducational resource, and do not use this on real accounts on real people.
 
-Now that that's out of the way, democrack-withcomments.py and democrack-mildlyfaster.py are NOT needed, they are simply other versions (comments lets you get more of an idea of how it works, mildly faster removes the amtnotit variable and anything to do with it for a mild speed boost.
+Now that that's out of the way, democrack-withcomments.py and democrack-mildlyfaster.py are NOT needed, they are simply other versions (comments lets you get more of an idea of how it works, mildly faster removes the amtnotit variable and anything to do with it for a mild speed boost).
 
 
 ## Why?
