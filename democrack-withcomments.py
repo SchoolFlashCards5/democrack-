@@ -2,13 +2,29 @@
 # THIS IS FOR EDUCATIONAL PURPOSES ONLY
 # I AM NOT RESPONSIBLE FOR HOW YOU USE THIS
 
-# ver 1.1!
+# ver 1.2!
 # commented file
 # im warning you, dont delete random shit
 
+# itertools is used for generating combinations
 import itertools
+# sys is used for exiting the program early
 import sys
+# string gives access to built-in character sets
 import string
+
+# -----------------------------
+# ASCII BANNER (NEW IN 1.2)
+# -----------------------------
+# Displays cool banner at program start.
+# Purely cosmetic. Does nothing functional.
+print(r"""
+     _                                          _    _ 
+  __| | ___ _ __ ___   ___   ___ _ __ __ _  ___| | _| |
+ / _` |/ _ \ '_ ` _ \ / _ \ / __| '__/ _` |/ __| |/ / |
+| (_| |  __/ | | | | | (_) | (__| | | (_| | (__|   <|_|
+ \__,_|\___|_| |_| |_|\___/ \___|_|  \__,_|\___|_|\_(_)
+""")
 
 # -----------------------------
 # CONFIG
@@ -25,19 +41,51 @@ PROGRESS_INTERVAL = 10_000_000
 amtnotit = 0
 
 # -----------------------------
-# 0. Read actual password
+# 0. Choose password source (NEW IN 1.2)
 # -----------------------------
+# Instead of ALWAYS requiring pass.txt,
+# user can now choose between:
+# 1) reading pass.txt
+# 2) typing password manually
 
-# Reads password from txt, only first line because i left instructions there too :)
-try:
-    with open('pass.txt', 'r') as file:
-        actual_password = file.readline().strip()
-        actual_tuple = tuple(actual_password)  # Convert once for faster comparison
-# error if pass.txt was not found (bad!!!)
-except FileNotFoundError:
-    print("Error: pass.txt not found. Cannot continue.")
-    print("(Maybe you dont have it loaded, or you are on an online compiler that doesnt let you import it)")
+print("Choose password source:")
+print("1 - Use pass.txt")
+print("2 - Type password manually")
+
+choice = input("Enter 1 or 2: ").strip()
+
+# If option 1 is selected, behave like old version
+if choice == "1":
+
+    # Reads password from txt, only first line because i left instructions there too :)
+    try:
+        with open('pass.txt', 'r') as file:
+            actual_password = file.readline().strip()
+            actual_tuple = tuple(actual_password)  # Convert once for faster comparison
+
+    # error if pass.txt was not found (bad!!!)
+    except FileNotFoundError:
+        print("ERROR: You chose pass.txt but it DOES NOT EXIST.")
+        print("(Maybe you dont have it loaded, or you are on an online compiler that doesnt let you import it)")
+        sys.exit(1)
+
+# If option 2 is selected, user manually inputs password
+elif choice == "2":
+
+    # NEW: does NOT require pass.txt anymore
+    actual_password = input("Type the password to brute-force: ").strip()
+    # Convert once for faster comparison
+    actual_tuple = tuple(actual_password)
+
+# Anything else = invalid
+else:
+    print("Invalid choice. Exiting.")
     sys.exit(1)
+
+# IMPORTANT:
+# We only print this AFTER password source is selected.
+# (1.2 change — no premature printing)
+print("Starting by trying common passes...")
 
 # -----------------------------
 # 1. Check common passwords first
@@ -75,6 +123,7 @@ chars = CHARACTERS
 product = itertools.product
 actual = actual_tuple
 
+# Loops through each possible length
 for length in range(MIN_LENGTH, MAX_LENGTH + 1):
     for guess in product(chars, repeat=length):
 
@@ -98,6 +147,7 @@ for length in range(MIN_LENGTH, MAX_LENGTH + 1):
 if not found:
     print("\nPassword was not found in the brute-force search space.")
     print("Maybe it's too long, contains numbers, symbols, or uses unsupported characters.")
+
 # Reminder:
 # You can remove amtnotit and the progress check entirely for slightly better speed,
 # but you won't see progress updates.
