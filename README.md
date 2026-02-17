@@ -26,6 +26,14 @@ Now that that's out of the way, democrack-withcomments.py and democrack-mildlyfa
 
 Boredom and freedom can combine for the better or for the worse, and here? A little bit of a mix.
 
+## GUI 
+
+<sub>(this was lowkey the hardest part)</sub>
+
+I have no need to explain. It basically reroutes stuff from the terminal to the GUI before it even TRIES. Just does all the behind the scenes work normally and outputus in a cleaner fashion (for some people, i think the CLI version is better.)
+
+Just read below on how it works, and imagine a little traffic guy telling the code to go from the terminal to the GUI.
+
 ## How this silly democracker works
 
 It begins with a selection area where you can choose the password type you want
