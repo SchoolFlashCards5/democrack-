@@ -33,9 +33,7 @@ amtnotit = 0
 # -----------------------------
 # 0. Choose password source
 # -----------------------------
-print("Choose password source:")
-print("1 - Use pass.txt")
-print("2 - Type password manually")
+print("Choose password source:\n1 - Use pass.txt\n2 - Type password manually")
 
 choice = input("Enter 1 or 2: ").strip()
 
@@ -45,8 +43,7 @@ if choice == "1":
             actual_password = file.readline().strip()
             actual_tuple = tuple(actual_password)
     except FileNotFoundError:
-        print("ERROR: You chose pass.txt but it DOES NOT EXIST.")
-        print("Load the file or choose option 2 next time.")
+        print("ERROR: You chose pass.txt but it DOES NOT EXIST.\nLoad the file or choose option 2 next time.")
         sys.exit(1)
 
 elif choice == "2":
@@ -70,8 +67,7 @@ try:
             amtnotit += 1
 
             if guess == actual_password:
-                print(f"Got it from commons! Password is: {guess}")
-                print(f"Took {amtnotit} tries!")
+                print(f"Got it from commons! Password is: {guess}\nTook {amtnotit} tries!")
                 sys.exit(0)
 
             if amtnotit % PROGRESS_INTERVAL == 0:
@@ -83,8 +79,7 @@ except FileNotFoundError:
 # -----------------------------
 # 2. Brute-force
 # -----------------------------
-print("Wasn't in common passes we had...")
-print("Starting brute forcing...")
+print("Wasn't in common passes we had...\nStarting brute forcing...")
 
 found = False
 
@@ -100,8 +95,7 @@ for length in range(MIN_LENGTH, MAX_LENGTH + 1):
 
         # Direct tuple comparison (no string creation)
         if guess == actual:
-            print(f"Got it! Password is: {''.join(guess)}")
-            print(f"Took {amtnotit} tries!")
+            print(f"Got it! Password is: {''.join(guess)}\nTook {amtnotit} tries!")
             found = True
             break
 
@@ -112,9 +106,7 @@ for length in range(MIN_LENGTH, MAX_LENGTH + 1):
         break
 
 if not found:
-    print("\nPassword was not found in the brute-force search space.")
-    print("Maybe it's too long, contains numbers, symbols, or uses unsupported characters.")
-    print("Perhaps read the instructions next time?")
+    print("\nPassword was not found in the brute-force search space.\nMaybe it's too long, contains numbers, symbols, or uses unsupported characters.\nPerhaps read the instructions next time?")
 
 # Reminder:
 # You can remove amtnotit and the progress check entirely for slightly better speed,
