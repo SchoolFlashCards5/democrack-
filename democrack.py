@@ -1,7 +1,7 @@
 # WARNING
 # THIS IS FOR EDUCATIONAL PURPOSES ONLY
 # I AM NOT RESPONSIBLE FOR HOW YOU USE THIS
-# ver 1.2
+# ver 1.3
 # normal file
 # im warning you, dont delete random shit
 
@@ -43,7 +43,7 @@ if choice == "1":
             actual_password = file.readline().strip()
             actual_tuple = tuple(actual_password)
     except FileNotFoundError:
-        print("ERROR: You chose pass.txt but it DOES NOT EXIST.\nLoad the file or choose option 2 next time.")
+        print("ERROR: You chose pass.txt but it DOES NOT EXIST.\nMaybe its in a different foldedr?\nLoad the file or choose option 2 next time.")
         sys.exit(1)
 
 elif choice == "2":

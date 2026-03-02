@@ -2,7 +2,7 @@
 # THIS IS FOR EDUCATIONAL PURPOSES ONLY
 # I AM NOT RESPONSIBLE FOR HOW YOU USE THIS
 
-# ver 1.2!
+# ver 1.3
 # commented file
 # im warning you, dont delete random shit
 
@@ -65,7 +65,7 @@ if choice == "1":
 
     # error if pass.txt was not found (bad!!!)
     except FileNotFoundError:
-        print("ERROR: You chose pass.txt but it DOES NOT EXIST.")
+        print("ERROR: You chose pass.txt but it DOES NOT EXIST. Maybe its in the wrong folder.")
         print("(Maybe you dont have it loaded, or you are on an online compiler that doesnt let you import it)")
         sys.exit(1)
 
@@ -109,7 +109,7 @@ try:
 
 # skips common pass check if commons.txt was not found
 except FileNotFoundError:
-    print("commons.txt not found, skipping common password check.")
+    print("commons.txt not found, skipping common password check. maybe its in a different folder?")
 
 # -----------------------------
 # 2. Brute-force

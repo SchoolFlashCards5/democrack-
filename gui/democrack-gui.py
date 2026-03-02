@@ -8,6 +8,7 @@ import os
 
 # THIS VERSION (democrack-gui.py) was the hardest overall
 # gotta admit to a little bit of vibecoding on this one
+# ver 1.3
 
 class BruteForceGUI:
     def __init__(self, root):
@@ -226,7 +227,7 @@ class BruteForceGUI:
                         return True
                         
         except FileNotFoundError:
-            self.log("commons.txt not found, skipping common password check.")
+            self.log("commons.txt not found, skipping common password check. maybe its in a different folder?")
         
         return False
     

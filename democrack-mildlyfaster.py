@@ -1,7 +1,7 @@
 # WARNING
 # THIS IS FOR EDUCATIONAL PURPOSES ONLY
 # I AM NOT RESPONSIBLE FOR HOW YOU USE THIS
-# ver 1.2
+# ver 1.3
 # added password input option
 # im warning you, dont delete random shit
 
@@ -43,7 +43,7 @@ if choice == "1":
             actual_password = file.readline().strip()
             actual_tuple = tuple(actual_password)
     except FileNotFoundError:
-        print("ERROR: You chose pass.txt but it DOES NOT EXIST.")
+        print("ERROR: You chose pass.txt but it DOES NOT EXIST. Is it in the same folder?")
         print("Load the file or choose option 2 next time.")
         sys.exit(1)
 
@@ -70,7 +70,7 @@ try:
                 sys.exit(0)
 
 except FileNotFoundError:
-    print("commons.txt not found, skipping common password check.")
+    print("commons.txt not found, skipping common password check. maybe it isn't in the same folder?")
 
 # -----------------------------
 # 2. Brute-force
