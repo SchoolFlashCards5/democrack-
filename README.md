@@ -27,11 +27,21 @@ Now that that's out of the way, democrack-withcomments.py and democrack-mildlyfa
 
 Boredom and freedom can combine for the better or for the worse, and here? A little bit of a mix.
 
+## Desktop version
+
+This is the simplest thing i can POSSIBLY explain. It is a pyinstaller exe, so thanks to pyinstaller i could make a desktop version.
+
+It is based of GUI, which is based off of the mildly-faster, which is based off democrack, so it somehow still all loops back to the original script.
+
+And no, it ain't a virus. Your antivirus may say so though, considering it is a demo of a cracking tool (THAT IS A DEMO, EDUCATIONAL USES ONLY PEOPLE!). So if you get a warning from your antivirus or virustotal, run it in a virtual machine with wireshark open, believe me, it's fine.
+
 ## GUI 
 
 <sub>(this was lowkey the hardest part)</sub>
 
-I have no need to explain. It basically reroutes stuff from the terminal to the GUI before it even TRIES. Just does all the behind the scenes work normally and outputus in a cleaner fashion (for some people, i think the CLI version is better.)
+I have no need to explain. It basically reroutes stuff from the terminal to the GUI before it even TRIES. Just does all the behind the scenes work normally and outputs in a cleaner fashion (for some people, i think the CLI version is better.)
+
+GUI is based off of the mildly-faster version of democrack.
 
 Just read below on how it works, and imagine a little traffic guy telling the code to go from the terminal to the GUI.
 
