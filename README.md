@@ -93,6 +93,9 @@ The democracker begins to brute force. This obviously, is the same as option 1 s
 
 
 # CHANGE LOG
+## v1.3 changes
+added warning, and desktop version (enough to warrant its own version in my opinion)
+
 ## v1.2 changes
 Added ascii banner before anything else (displays "democrack!" in ascii art
 
