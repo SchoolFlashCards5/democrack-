@@ -9,6 +9,7 @@ ver 1.3
 # THIS IS AN EDUCATION RESOURCE
 # DO NOT USE IN REAL LIFE ON REAL PASSWORDS!
 # I CANNOT STRESS THIS ENOUGH!
+## This is, again, education proj. This is to teach people how crackers work and how to avoid having their passwords compromised.
 
 ### Only works with ascii letters (no symbols, no numbers, no punctuation. just letters)
 
