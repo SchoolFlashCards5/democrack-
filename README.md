@@ -1,6 +1,6 @@
 
 # democrack!
-ver 1.2
+ver 1.3
 
 # THIS IS NNY'S PROJECT 
 
