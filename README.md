@@ -1,6 +1,6 @@
 
 # democrack!
-ver 1.3
+ver 2.0
 
 # THIS IS NNY'S PROJECT 
 
@@ -15,6 +15,10 @@ ver 1.3
 
 
 democrack! is a democracker in pure python.
+
+reminder:
+
+as of update 1.2 ish, you only need one .py/.exe for it to function, but if you want to have a dictionary attack included, include the commons.txt in the same folder as the .py or .exe you are executing.
 
 ## Something to note
 
@@ -90,9 +94,18 @@ The democracker then begins dictionary attack. It was explained earlier, do not 
 Step 3.
 The democracker begins to brute force. This obviously, is the same as option 1 selection, but with the password you inputted.
 
+### How it actually works (option 3 selected)
+It generates a password, giving you the option between random garbled garbage, and readable and rememberable good passwords.
+
+Not too much to go over here.
+
 
 
 # CHANGE LOG
+
+## v2.0 changes
+Add little thing warning in some code that didnt have it thats like "Oh nozers! Couldnt find commons.txt/pass.txt, wrong folder maybe?"
+
 ## v1.3 changes
 added warning, and desktop version (enough to warrant its own version in my opinion)
 

@@ -1,13 +1,14 @@
 # WARNING
 # THIS IS FOR EDUCATIONAL PURPOSES ONLY
 # I AM NOT RESPONSIBLE FOR HOW YOU USE THIS
-# ver 1.3
+# ver 2.0
 # added password input option
 # im warning you, dont delete random shit
 
 import itertools
 import sys
 import string
+import random
 
 # -----------------------------
 # ASCII BANNER
@@ -28,14 +29,55 @@ MIN_LENGTH = 1
 MAX_LENGTH = 10
 PROGRESS_INTERVAL = 10_000_000
 
+symbols1 = "!@#$%^&*()."
+genCHARACTER = string.ascii_letters + string.digits + symbols1
+
+# -----------------------------
+# -. Generate password function.
+# -----------------------------
+def genpasschoose():
+    print("\nOptions:\n1 - Generate fully randomized password\n2 - Generate good but memorizable password")
+    choice = input("Enter 1 or 2: ")
+    if choice == "1":
+        genpassran()
+    elif choice == "2":
+        genpassrem()
+    else:
+        print("Invalid choice. Exiting.")
+        sys.exit(1)
+
+# generate random password function
+def genpassran():
+    word = ''.join(random.choice(genCHARACTER) for _ in range(15))
+    print(word)
+
+# generate memorable password function
+def genpassrem():
+    # Read your word list (each word is a line)
+    with open("commons.txt", "r") as f:
+        words = [line.strip() for line in f]
+
+    # Pick 2 random words
+    word1 = random.choice(words).capitalize()
+    word2 = random.choice(words).capitalize()
+
+    # Add 2 random digits/symbols using your existing symbols1
+    suffix = ''.join(random.choice(symbols1 + string.digits) for _ in range(2))
+
+    # Combine into a password
+    password = word1 + word2 + suffix
+
+    print(password)
+
 # -----------------------------
 # 0. Choose password source
 # -----------------------------
 print("Choose password source:")
 print("1 - Use pass.txt")
 print("2 - Type password manually")
+print("3 - Generate Password")
 
-choice = input("Enter 1 or 2: ").strip()
+choice = input("Enter 1, 2, or 3: ").strip()
 
 if choice == "1":
     try:
@@ -50,6 +92,10 @@ if choice == "1":
 elif choice == "2":
     actual_password = input("Type the password to brute-force: ").strip()
     actual_tuple = tuple(actual_password)
+
+elif choice == "3":
+    genpasschoose()
+    sys.exit(0)
 
 else:
     print("Invalid choice. Exiting.")
