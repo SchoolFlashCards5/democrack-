@@ -106,6 +106,8 @@ Not too much to go over here.
 ## v2.0 changes
 Add little thing warning in some code that didnt have it thats like "Oh nozers! Couldnt find commons.txt/pass.txt, wrong folder maybe?"
 
+Also added password generator, new thing that allows you to generate passwords to see what a good password *should* look like
+
 ## v1.3 changes
 added warning, and desktop version (enough to warrant its own version in my opinion)
 
